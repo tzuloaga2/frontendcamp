@@ -1,0 +1,56 @@
+.heading {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #3b3b3b;
+  margin-top: 5rem;
+  animation: slide-in-fwd-center 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.subheading {
+  text-align: center;
+  font-size: 2rem;
+  color: #8e8e8e;
+  margin-top: 2rem;
+  animation: slide-in-fwd-center 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both;
+}
+
+.login-button {
+  display: block;
+  margin: 3rem auto;
+  font-size: 1.5rem;
+  background-color: #67c23a;
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation: scale-up-center 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s both;
+}
+
+.login-button:hover {
+  background-color: #53a93f;
+}
+
+@keyframes slide-in-fwd-center {
+  0% {
+    opacity: 0;
+    transform: translateZ(-1400px) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(0) rotateX(0);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
