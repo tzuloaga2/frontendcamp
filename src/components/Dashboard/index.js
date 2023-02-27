@@ -23,7 +23,8 @@ function Dashboard(props) {
       })
   }, [props.data]);
 
-  function createAssignment() {
+  function createAssignment(e) {
+    e.preventDefault();
     fetcher("api/assignments", "post", props.data)
       .then((assignment) => {
         navigate(`/assignments/${assignment.id}`);
@@ -34,7 +35,7 @@ function Dashboard(props) {
     <div>
       <h1>Dashboard</h1>
       <h3> Welcome {props.data ? parseJwt(props.data)['sub'] : <></>}</h3>
-      <button className="create-btn" onClick={() => createAssignment()}>Make New Assignment</button>
+      <button className="create-btn" onClick={(e) => createAssignment(e)}>Make New Assignment</button>
       <div className='assignmentsContainer'>
         {
           assignments1?.map((item) => {
